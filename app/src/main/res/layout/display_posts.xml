@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+
+    >
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:id="@+id/rest_name_textView"
+        android:layout_alignParentLeft="true"
+        android:text="Rest Name"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"/>
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:id="@+id/price_name_textView"
+        android:layout_toRightOf="@id/rest_name_textView"
+        android:text="Price"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"
+        />
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:id="@+id/post_name_textView"
+        android:layout_toRightOf="@id/price_name_textView"
+        android:text="Post"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="135dp"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+</RelativeLayout>
