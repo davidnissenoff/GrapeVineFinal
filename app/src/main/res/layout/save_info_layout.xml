@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/custom"
+    android:background="@drawable/gvbg"
     >
 
     <EditText
@@ -47,6 +47,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="36dp"
+        android:background="#b274b1"
         android:onClick="makePost"
         android:text="Make Post"
         android:theme="@style/PrimaryButton" />
@@ -78,6 +79,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="131dp"
+        android:background="#b274b1"
         android:layout_marginEnd="106dp"
         android:text="Take Photo" />
 </RelativeLayout>

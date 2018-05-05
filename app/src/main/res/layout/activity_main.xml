@@ -5,43 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/grapelogo2"
+    android:background="#FFFFFF"
 
     >
 
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="222dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:theme="@style/PrimaryButton"
+        android:layout_marginBottom="196dp"
+        android:background="#b274b1"
         android:onClick="addPost"
-        android:text="Make Post" />
+        android:text="Make Post"
+        android:theme="@style/PrimaryButton" />
 
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="222dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="135dp"
+        android:background="#b274b1"
         android:onClick="displayPosts"
-        android:theme="@style/PrimaryButton"
-        android:text="View Posts" />
+        android:text="View Posts"
+        android:theme="@style/PrimaryButton" />
 
     <Button
         android:id="@+id/google_button"
-        android:layout_width="wrap_content"
+        android:layout_width="222dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-70dp"
+        android:layout_marginBottom="72dp"
+        android:background="#b274b1"
+
         android:onClick="googlebtn"
         android:text="Discover New Restaurants"
-        android:theme="@style/PrimaryButton"
+        android:theme="@style/PrimaryButton" />
 
-        />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/gvlogo1" />
+
 </RelativeLayout>

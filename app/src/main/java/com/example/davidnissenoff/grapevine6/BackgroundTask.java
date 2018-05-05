@@ -34,7 +34,7 @@ public class BackgroundTask extends AsyncTask<String, Post, String> {
             String item = params[4];
             SQLiteDatabase db = dbOperations.getWritableDatabase();
             dbOperations.addInformations(db, name, price, post, item);
-            return "One row inserted...";
+            return "Post Created!";
 
         }
         else if(method.equals("get_info")){

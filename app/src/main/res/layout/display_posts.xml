@@ -9,7 +9,8 @@
         android:id="@+id/rest_name_textView"
         android:layout_width="99dp"
         android:layout_height="63dp"
-
+        android:maxLines="2"
+        android:ellipsize="end"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/textView"
         android:layout_marginTop="11dp"
@@ -21,7 +22,8 @@
         android:id="@+id/price_name_textView"
         android:layout_width="105dp"
         android:layout_height="58dp"
-
+        android:maxLines="2"
+        android:ellipsize="end"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:gravity="center"
@@ -32,7 +34,8 @@
         android:id="@+id/post_name_textView"
         android:layout_width="150dp"
         android:layout_height="68dp"
-
+        android:maxLines="2"
+        android:ellipsize="end"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
         android:gravity="center"
@@ -53,7 +56,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:maxLines="2"
         android:gravity="center"
         android:layout_toStartOf="@+id/post_name_textView"
         android:text="Restaurant Name" />
@@ -62,7 +65,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:maxLines="2"
 
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
@@ -73,7 +76,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:maxLines="2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="117dp"
         android:text="Your Thoughts" />
@@ -84,6 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/post_name_textView"
         android:layout_alignParentTop="true"
+        android:maxLines="2"
         android:text="What Did You Get?" />
 
     <TextView
@@ -93,6 +97,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/imageView"
         android:layout_marginTop="3dp"
+        android:maxLines="2"
         android:gravity="center"
         android:text="Your Order"
         android:textAppearance="?android:textAppearanceLarge" />
