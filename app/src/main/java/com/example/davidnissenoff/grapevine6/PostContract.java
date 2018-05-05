@@ -8,7 +8,7 @@ public final class PostContract {
         public static final String NAME = "name";
         public static final String PRICE = "price";
         public static final String POST = "post";
-
+        public static final String ITEM = "item";
         public static final String TABLE_NAME = "post_table";
     }
 

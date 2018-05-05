@@ -19,4 +19,5 @@ public class MainActivity extends AppCompatActivity {
     public void displayPosts(View view){
         startActivity(new Intent(this, DisplayPost.class));
     }
+    public void googlebtn(View view){startActivity(new Intent(this, GooglePlaces.class));}
 }

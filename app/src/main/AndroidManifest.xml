@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.davidnissenoff.grapevine6">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -18,6 +20,14 @@
         </activity>
         <activity android:name=".SaveInfo" />
         <activity android:name=".DisplayPost"></activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCH9ytJfkmSJFs_Xea00ddAL9ie4zh1xiI"/>
+        <activity android:name=".GooglePlaces"></activity>
+        <provider
+            android:name="com.example.davidnissenoff.grapevine6.PlaceContentProvider"
+            android:authorities="com.davidnissenoff.grapevine6"
+            android:exported="false"/>
     </application>
 
 </manifest>

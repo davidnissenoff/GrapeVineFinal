@@ -6,38 +6,104 @@
     >
 
     <TextView
-        android:layout_width="70dp"
-        android:layout_height="match_parent"
         android:id="@+id/rest_name_textView"
-        android:layout_alignParentLeft="true"
+        android:layout_width="99dp"
+        android:layout_height="63dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="11dp"
+        android:gravity="center"
         android:text="Rest Name"
-        android:gravity="center"
-        android:textAppearance="?android:textAppearanceLarge"/>
+        android:textAppearance="?android:textAppearanceLarge" />
+
     <TextView
-        android:layout_width="150dp"
-        android:layout_height="match_parent"
         android:id="@+id/price_name_textView"
-        android:layout_toRightOf="@id/rest_name_textView"
+        android:layout_width="105dp"
+        android:layout_height="58dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
         android:text="Price"
-        android:gravity="center"
-        android:textAppearance="?android:textAppearanceLarge"
-        />
+        android:textAppearance="?android:textAppearanceLarge" />
+
     <TextView
-        android:layout_width="150dp"
-        android:layout_height="match_parent"
         android:id="@+id/post_name_textView"
-        android:layout_toRightOf="@id/price_name_textView"
-        android:text="Post"
+        android:layout_width="150dp"
+        android:layout_height="68dp"
+
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:textAppearance="?android:textAppearanceLarge"/>
+        android:text="Post"
+        android:textAppearance="?android:textAppearanceLarge" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/post_name_textView"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="135dp"
+        android:layout_marginBottom="69dp"
         app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:layout_toStartOf="@+id/post_name_textView"
+        android:text="Restaurant Name" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="37dp"
+        android:text="Price" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="117dp"
+        android:text="Your Thoughts" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/post_name_textView"
+        android:layout_alignParentTop="true"
+        android:text="What Did You Get?" />
+
+    <TextView
+        android:id="@+id/what_you_got_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:text="Your Order"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/delete_post_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/price_name_textView"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="-69dp"
+        android:text="Delete Post" />
 
 </RelativeLayout>

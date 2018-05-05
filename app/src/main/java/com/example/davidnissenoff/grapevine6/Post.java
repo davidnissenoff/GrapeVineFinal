@@ -1,12 +1,13 @@
 package com.example.davidnissenoff.grapevine6;
 
 public class Post {
-    private String rest_name, post;
-    private int price;
-    public Post(String rest_name, int price, String post){
+    private String rest_name, post, item;
+    private int price, id;
+    public Post(String rest_name, int price, String post, String item){
         this.setRest_name(rest_name);
         this.setPrice(price);
         this.setPost(post);
+        this.set_item(item);
     }
     public String getRest_name() {
         return rest_name;
@@ -30,5 +31,21 @@ public class Post {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public String get_item() {
+        return item;
+    }
+
+    public void set_item(String item) {
+        this.item = item;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

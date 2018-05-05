@@ -31,8 +31,9 @@ public class BackgroundTask extends AsyncTask<String, Post, String> {
             String name = params[1];
             int price = Integer.parseInt(params[2]);
             String post = params[3];
+            String item = params[4];
             SQLiteDatabase db = dbOperations.getWritableDatabase();
-            dbOperations.addInformations(db, name, price, post);
+            dbOperations.addInformations(db, name, price, post, item);
             return "One row inserted...";
 
         }
@@ -41,13 +42,14 @@ public class BackgroundTask extends AsyncTask<String, Post, String> {
             SQLiteDatabase db = dbOperations.getWritableDatabase();
             Cursor cursor = dbOperations.getInformations(db);
             postAdapter = new PostAdapter(context, R.layout.display_posts);
-            String rest_name, post;
+            String rest_name, post, item;
             int price;
             while (cursor.moveToNext()){
                 rest_name = cursor.getString(cursor.getColumnIndex(PostContract.PostEntry.NAME));
                 price = cursor.getInt(cursor.getColumnIndex(PostContract.PostEntry.PRICE));
                 post = cursor.getString(cursor.getColumnIndex(PostContract.PostEntry.POST));
-                Post post1 = new Post(rest_name, price, post);
+                item = cursor.getString(cursor.getColumnIndex(PostContract.PostEntry.ITEM));
+                Post post1 = new Post(rest_name, price, post, item);
                 publishProgress(post1);
             }
                 return "get_info";
@@ -71,4 +73,5 @@ public class BackgroundTask extends AsyncTask<String, Post, String> {
         }
 
     }
+
 }
