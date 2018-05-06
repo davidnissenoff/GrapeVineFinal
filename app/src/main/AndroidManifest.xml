@@ -3,6 +3,10 @@
     package="com.example.davidnissenoff.grapevine6">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
 
     <application
         android:allowBackup="true"
@@ -12,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,6 +29,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCH9ytJfkmSJFs_Xea00ddAL9ie4zh1xiI"/>
         <activity android:name=".GooglePlaces"></activity>
+        <activity android:name=".PictureActivity"></activity>
+        <activity android:name=".DisplayImage"
+            android:label="@string/title_activity_display_image"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
         <provider
             android:name="com.example.davidnissenoff.grapevine6.PlaceContentProvider"
             android:authorities="com.davidnissenoff.grapevine6"

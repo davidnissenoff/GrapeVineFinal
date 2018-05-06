@@ -1,14 +1,19 @@
 package com.example.davidnissenoff.grapevine6;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.Typeface;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -65,39 +70,30 @@ public class PostAdapter extends ArrayAdapter {
             postHolder.tx_price = row.findViewById(R.id.price_name_textView);
             postHolder.tx_post = row.findViewById(R.id.post_name_textView);
             postHolder.tx_item = row.findViewById(R.id.what_you_got_textView);
-            postHolder.delete_btn = row.findViewById(R.id.delete_post_btn);
+
+
             row.setTag(postHolder);
 
         }
         else{
             postHolder = (PostHolder) row.getTag();
         }
-        Post post = (Post) getItem(position);
+        final Post post = (Post) getItem(position);
 
         postHolder.tx_rest_name.setText(post.getRest_name().toString());
         postHolder.tx_price.setText(Integer.toString(post.getPrice()));
         postHolder.tx_post.setText(post.getPost().toString());
         postHolder.tx_item.setText(post.get_item().toString());
-        postHolder.delete_btn.setTag(position);
-        postHolder.delete_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
 
-                list.remove(position);
-                dbOperations = new DbOperations(getContext());
-                db = dbOperations.getWritableDatabase();
-                db.delete(TABLE_NAME, KEY_ID + "=" + (position+1), null);
 
-                db.close();
-                notifyDataSetChanged();
 
-            }
-        });
+
         return row;
     }
 
     static class PostHolder{
         TextView tx_rest_name, tx_post, tx_price, tx_item;
-        Button delete_btn;
+        Button delete_btn, picture_btn;
+        ImageView mImageView;
     }
 }

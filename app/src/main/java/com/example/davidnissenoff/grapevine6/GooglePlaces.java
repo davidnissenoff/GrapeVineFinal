@@ -4,6 +4,7 @@ import android.app.NotificationManager;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -44,29 +45,24 @@ public class GooglePlaces extends AppCompatActivity implements
         ConnectionCallbacks,
         OnConnectionFailedListener {
 
-    // Constants
+
     public static final String TAG = MainActivity.class.getSimpleName();
     private static final int PERMISSIONS_REQUEST_FINE_LOCATION = 111;
     private static final int PLACE_PICKER_REQUEST = 1;
 
-    // Member variables
+
     private PlaceListAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private boolean mIsEnabled;
     private GoogleApiClient mClient;
     private Geofencing mGeofencing;
 
-    /**
-     * Called when the activity is starting
-     *
-     * @param savedInstanceState The Bundle that contains the data supplied in onSaveInstanceState
-     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m);
-
-        // Set up the recycler view
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mRecyclerView = (RecyclerView) findViewById(R.id.places_list_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new PlaceListAdapter(this, null);
@@ -101,33 +97,22 @@ public class GooglePlaces extends AppCompatActivity implements
         mGeofencing = new Geofencing(this, mClient);
 
     }
+    public void goBack3(View view){
+        finish();
+    }
 
-    /***
-     * Called when the Google API Client is successfully connected
-     *
-     * @param connectionHint Bundle of data provided to clients by Google Play services
-     */
     @Override
     public void onConnected(@Nullable Bundle connectionHint) {
         refreshPlacesData();
         Log.i(TAG, "API Client Connection Successful!");
     }
 
-    /***
-     * Called when the Google API Client is suspended
-     *
-     * @param cause cause The reason for the disconnection. Defined by constants CAUSE_*.
-     */
     @Override
     public void onConnectionSuspended(int cause) {
         Log.i(TAG, "API Client Connection Suspended!");
     }
 
-    /***
-     * Called when the Google API Client failed to connect to Google Play Services
-     *
-     * @param result A ConnectionResult that can be used for resolving the error
-     */
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult result) {
         Log.e(TAG, "API Client Connection Failed!");
@@ -181,13 +166,7 @@ public class GooglePlaces extends AppCompatActivity implements
     }
 
 
-    /***
-     * Called when the Place Picker Activity returns back with a selected place (or after canceling)
-     *
-     * @param requestCode The request code passed when calling startActivityForResult
-     * @param resultCode  The result code specified by the second activity
-     * @param data        The Intent that carries the result data.
-     */
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PLACE_PICKER_REQUEST && resultCode == RESULT_OK) {
             Place place = PlacePicker.getPlace(this, data);
@@ -198,12 +177,10 @@ public class GooglePlaces extends AppCompatActivity implements
 
             String placeID = place.getId();
 
-            // Insert a new place into DB
             ContentValues contentValues = new ContentValues();
             contentValues.put(PlaceContract.PlaceEntry.COLUMN_PLACE_ID, placeID);
             getContentResolver().insert(PlaceContract.PlaceEntry.CONTENT_URI, contentValues);
 
-            // Get live data information
             refreshPlacesData();
         }
     }
@@ -212,7 +189,7 @@ public class GooglePlaces extends AppCompatActivity implements
     public void onResume() {
         super.onResume();
 
-        // Initialize location permissions checkbox
+
         CheckBox locationPermissions = (CheckBox) findViewById(R.id.location_permission_checkbox);
         if (ActivityCompat.checkSelfPermission(GooglePlaces.this,
                 android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -222,10 +199,8 @@ public class GooglePlaces extends AppCompatActivity implements
             locationPermissions.setEnabled(false);
         }
 
-        // Initialize ringer permissions checkbox
         CheckBox ringerPermissions = (CheckBox) findViewById(R.id.ringer_permissions_checkbox);
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        // Check if the API supports such permission change and check if permission is granted
         if (android.os.Build.VERSION.SDK_INT >= 24 && !nm.isNotificationPolicyAccessGranted()) {
             ringerPermissions.setChecked(false);
         } else {

@@ -3,12 +3,15 @@ package com.example.davidnissenoff.grapevine6;
 public class Post {
     private String rest_name, post, item;
     private int price, id;
-    public Post(String rest_name, int price, String post, String item){
+    private byte[] _image;
+    public Post(String rest_name, int price, String post, String item) {
+
         this.setRest_name(rest_name);
         this.setPrice(price);
         this.setPost(post);
         this.set_item(item);
     }
+
     public String getRest_name() {
         return rest_name;
     }

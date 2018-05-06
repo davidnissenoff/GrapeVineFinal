@@ -24,7 +24,7 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.Plac
 
     @Override
     public PlaceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Get the RecyclerView item layout
+
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.activity_google, parent, false);
         return new PlaceViewHolder(view);
@@ -42,7 +42,7 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.Plac
     public void swapPlaces(PlaceBuffer newPlaces){
         mPlaces = newPlaces;
         if (mPlaces != null) {
-            // Force the RecyclerView to refresh
+
             this.notifyDataSetChanged();
         }
     }
@@ -54,9 +54,7 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.Plac
         return mPlaces.getCount();
     }
 
-    /**
-     * PlaceViewHolder class for the recycler view item
-     */
+
     class PlaceViewHolder extends RecyclerView.ViewHolder {
 
         TextView nameTextView;

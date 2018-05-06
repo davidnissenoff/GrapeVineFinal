@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gvbg"
-    >
+    xmlns:sothree="http://schemas.android.com/tools"
+    android:background="@drawable/gvbg">
 
     <EditText
         android:id="@+id/restaurant_name_editText"
@@ -63,23 +62,15 @@
         android:inputType="textPersonName"
         android:hint="Food Name" />
 
-    <ImageView
-        android:id="@+id/photo_image_view"
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/restaurant_name_editText"
-        android:layout_marginBottom="121dp"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:onClick="goBack"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <Button
-        android:id="@+id/take_photo_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="131dp"
-        android:background="#b274b1"
-        android:layout_marginEnd="106dp"
-        android:text="Take Photo" />
 </RelativeLayout>

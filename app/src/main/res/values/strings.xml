@@ -13,4 +13,9 @@
     <string name="silent_mode_activated">Silent mode activated</string>
     <string name="touch_to_relaunch">Touch to launch the app.</string>
     <string name="back_to_normal">Back to normal</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_image">Add Image</string>
+    <string name="title_activity_display_image">DisplayImage</string>
+    <string name="image_information">Image Information</string>
 </resources>

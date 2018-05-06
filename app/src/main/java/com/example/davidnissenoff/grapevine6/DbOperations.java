@@ -47,13 +47,6 @@ public class DbOperations extends SQLiteOpenHelper {
 
         return cursor;
     }
-    public void delete_byID(long id){
-        sqLiteDatabase.delete(TABLE_NAME, KEY_ID+"="+id, null);
-    }
-    public void deleteFrom(String del){
-
-        sqLiteDatabase.execSQL("delete from " + TABLE_NAME + KEY_ID + del);
-    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

@@ -5,10 +5,10 @@ import android.provider.BaseColumns;
 
 public class PlaceContract {
 
-    // The authority, which is how your code knows which Content Provider to access
+
     public static final String AUTHORITY = "com.davidnissenoff.grapevine6";
 
-    // The base content URI = "content://" + <authority>
+
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + AUTHORITY);
 
 
@@ -16,7 +16,7 @@ public class PlaceContract {
 
     public static final class PlaceEntry implements BaseColumns {
 
-        // TaskEntry content URI = base content URI + path
+
         public static final Uri CONTENT_URI =
                 BASE_CONTENT_URI.buildUpon().appendPath(PATH_PLACES).build();
 

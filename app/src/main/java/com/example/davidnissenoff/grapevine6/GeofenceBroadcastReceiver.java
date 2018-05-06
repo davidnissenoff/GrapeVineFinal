@@ -19,14 +19,7 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
     public static final String TAG = GeofenceBroadcastReceiver.class.getSimpleName();
 
-    /***
-     * Handles the Broadcast message sent when the Geofence Transition is triggered
-     * Careful here though, this is running on the main thread so make sure you start an AsyncTask for
-     * anything that takes longer than say 10 second to run
-     *
-     * @param context
-     * @param intent
-     */
+
     @Override
     public void onReceive(Context context, Intent intent) {
         // Get the Geofence Event from the Intent sent through
@@ -54,24 +47,16 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
     }
 
 
-    /**
-     * Posts a notification in the notification bar when a transition is detected
-     * Uses different icon drawables for different transition types
-     * If the user clicks the notification, control goes to the MainActivity
-     *
-     * @param context        The calling context for building a task stack
-     * @param transitionType The geofence transition type, can be Geofence.GEOFENCE_TRANSITION_ENTER
-     *                       or Geofence.GEOFENCE_TRANSITION_EXIT
-     */
+
     private void sendNotification(Context context, int transitionType) {
         // Create an explicit content Intent that starts the main Activity.
-        Intent notificationIntent = new Intent(context, MainActivity.class);
+        Intent notificationIntent = new Intent(context, GooglePlaces.class);
 
         // Construct a task stack.
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
 
         // Add the main Activity to the task stack as the parent.
-        stackBuilder.addParentStack(MainActivity.class);
+        stackBuilder.addParentStack(GooglePlaces.class);
 
         // Push the content Intent onto the stack.
         stackBuilder.addNextIntent(notificationIntent);
