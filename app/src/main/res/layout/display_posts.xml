@@ -38,7 +38,7 @@
         android:layout_marginTop="141dp"
         android:ellipsize="end"
         android:gravity="center"
-        android:maxLines="2"
+        
         android:text="Post"
         android:textAppearance="?android:textAppearanceLarge" />
 
