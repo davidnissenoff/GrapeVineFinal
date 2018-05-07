@@ -43,6 +43,8 @@ public class PictureActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.main_list_view);
         listView.setAdapter(imageAdapter);
 
+
+
         initDB();
     }
 
@@ -77,6 +79,7 @@ public class PictureActivity extends AppCompatActivity {
                 });
 
         dialog.show();
+
     }
 
 
@@ -108,6 +111,7 @@ public class PictureActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, RESULT_LOAD_IMAGE);
+
     }
 
     @Override protected void onActivityResult(int requestCode, int resultCode,

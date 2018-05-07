@@ -40,8 +40,10 @@ public class ImageAdapter extends ArrayAdapter<MyImage> {
             viewHolder.imgIcon =
                     (ImageView) convertView.findViewById(R.id.item_img_icon);
             convertView.setTag(viewHolder);
+
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
+
         }
 
         MyImage image = getItem(position);
@@ -51,7 +53,6 @@ public class ImageAdapter extends ArrayAdapter<MyImage> {
         viewHolder.imgIcon.setImageBitmap(ThumbnailUtils
                 .extractThumbnail(BitmapFactory.decodeFile(image.getPath()),
                         THUMBSIZE, THUMBSIZE));
-
 
         return convertView;
     }
