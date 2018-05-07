@@ -49,11 +49,11 @@ public class SaveInfo extends Activity {
             Toast.makeText(getApplicationContext(),"Please enter a number in Price", Toast.LENGTH_LONG).show();
 
         }
-        if(!r_price.matches("[0-9]+")&&  r_post.equals("") && r_item.equals("") && r_name.equals("") ){
+       // if(!r_price.matches("[0-9]+")&&  r_post.equals("") && r_item.equals("") && r_name.equals("") ){
 
-            Toast.makeText(getApplicationContext(),"Please enter a number in Price", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(getApplicationContext(),"Please enter a number in Price", Toast.LENGTH_LONG).show();
 
-        }
+       // }
         if(r_post.equals("") || r_item.equals("") || r_name.equals("") || r_price.equals("")){
             Toast.makeText(getApplicationContext(),"One or more fields are empty", Toast.LENGTH_LONG).show();
         }
